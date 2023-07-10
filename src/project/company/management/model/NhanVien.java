@@ -7,6 +7,7 @@ package project.company.management.model;
 import java.util.Date;
 
 public class NhanVien {
+    private String maNV;
     private String taiKhoan;
     private String matKhau;
     private String ten;
