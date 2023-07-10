@@ -1,149 +1,27 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ */
 package project.company.management.view;
 
-import java.awt.Desktop;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import org.apache.poi.ss.usermodel.BorderStyle;
-import project.company.management.database.DatabaseCanBo;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.FillPatternType;
-import org.apache.poi.ss.usermodel.Font;
-import org.apache.poi.ss.usermodel.HorizontalAlignment;
-import org.apache.poi.ss.usermodel.IndexedColors;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+/**
+ *
+ * @author quanghoang
+ */
+public class NhapKHo extends javax.swing.JPanel {
 
-
-public class XuatKho extends javax.swing.JPanel {
-   
-    Connection connection;
-    DatabaseCanBo dbCanBo = new DatabaseCanBo();
-    DefaultTableModel model;
-
-    public XuatKho() throws SQLException {
+    /**
+     * Creates new form NhapKHo
+     */
+    public NhapKHo() {
         initComponents();
-        
-        showDataToTable();
     }
-    
-    public void showDataToTable() throws SQLException {
-        String id, hoTen, ngaySinh, gioiTinh, diaChi;
-        
-        model = (DefaultTableModel) showDataTable.getModel();
-        
-        //Tạo ra các cột với các tiêu đề
-        model.setColumnIdentifiers(new Object[]{
-                "STT", "ID","Chức Vụ", "Họ và tên", "Ngày sinh", "Địa chỉ", "Giới Tính" ,"Số Ngày Làm Việc", "Lương"
-        });
-        
-        System.out.println("" + model.getColumnName(1));
-        
-        // lấy biến connection từ dbCanbo
-        connection = dbCanBo.createConnect2();
-        
-        Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("SELECT * FROM can_bo");
 
-        int i = 1;
-        while (rs.next()) {
-            id = rs.getString(2);
-            hoTen = rs.getString("ho_ten");
-            ngaySinh = rs.getString("ngay_sinh");
-            gioiTinh = rs.getString(5);
-            diaChi = rs.getString(6);
-            String chucVu = rs.getString(7);
-            String soNgayLamViec = rs.getString(8);
-            double luong = rs.getDouble(9);
-
-            model.addRow(new Object[]{
-                    i++, id, chucVu, hoTen, ngaySinh, diaChi, gioiTinh, soNgayLamViec, String.format("%,.2f", luong)
-            });
-        }
-    }
-    
-    public void openFile(String file) {
-        try {
-            File path = new File(file);
-            Desktop.getDesktop().open(path);
-        }catch(IOException error) {
-            JOptionPane.showMessageDialog(kGradientPanel1, error);
-        } 
-    }
-    
-    // Tự động điều chỉnh kích thước các cột
-    private static void autosizeColumn(Sheet sheet, int lastColumn) {
-        for (int columnIndex = 0; columnIndex < lastColumn; columnIndex++) {
-            sheet.autoSizeColumn(columnIndex);
-        }
-    }
-    
-    // Create CellStyle for header
-    private static CellStyle createStyleForHeader(Sheet sheet) {
-        // Create font
-        Font font = sheet.getWorkbook().createFont();
-        font.setFontName("Calibri"); 
-        font.setBold(true);
-        font.setFontHeightInPoints((short) 14); // font size
-        font.setColor(IndexedColors.BLACK.getIndex()); // text color
- 
-        // Create CellStyle
-        CellStyle cellStyle = sheet.getWorkbook().createCellStyle();
-        cellStyle.setFont(font);
-        cellStyle.setFillForegroundColor(IndexedColors.LIGHT_TURQUOISE.getIndex());
-        cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-        cellStyle.setBorderBottom(BorderStyle.THIN);
-        cellStyle.setAlignment(HorizontalAlignment.CENTER);
-        return cellStyle;
-    }
-    
-    // Tạo CellStyle cho chữ
-    private CellStyle createStyleForText(Sheet sheet) {
-        // Create font
-        Font font = sheet.getWorkbook().createFont();
-        font.setFontName("Calibri"); 
-        font.setFontHeightInPoints((short) 11); // font size
-        font.setColor(IndexedColors.BLACK.getIndex()); // text color
- 
-        // Create CellStyle
-        CellStyle cellStyle = sheet.getWorkbook().createCellStyle();
-        cellStyle.setFont(font);
-        
-        cellStyle.setAlignment(HorizontalAlignment.CENTER);
-        return cellStyle;
-    }
-    
-    // Tạo header bằng các tên cột
-    private void writeHeader(Sheet sheet, int rowIndex) {
-        // tạo CellStyle
-        CellStyle cellStyle = createStyleForHeader(sheet);
-         
-        // tạo hàng
-        Row row = sheet.createRow(rowIndex);
-         
-        // gán dữ liệu các cell
-        for (int i = 0; i < model.getColumnCount(); i++) {
-            Cell cell = row.createCell(i);
-            cell.setCellStyle(cellStyle);
-            cell.setCellValue(model.getColumnName(i));
-        }
-    }
-    
-    
-
-   
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -183,7 +61,7 @@ public class XuatKho extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã phiếu xuất", "Mã hàng", "Số lượng", "Mã nhà cung cấp", "Ngày nhập", "Tổng tiền", "Mã nhân viên"
+                "Mã phiếu", "Mã hàng", "Số lượng", "Mã nhà cung cấp", "Ngày nhập", "Tổng tiền", "Mã nhân viên"
             }
         ) {
             Class[] types = new Class [] {
@@ -219,7 +97,7 @@ public class XuatKho extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Xuất Kho");
+        jLabel1.setText("Nhập Kho");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Mã nhà cung cấp:");
@@ -291,7 +169,7 @@ public class XuatKho extends javax.swing.JPanel {
         });
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel9.setText("Mã phiếu xuất:");
+        jLabel9.setText("Mã phiếu nhập:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -317,7 +195,7 @@ public class XuatKho extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(81, 81, 81)
                                 .addComponent(etDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 649, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 647, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btThem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(213, 213, 213)
@@ -379,7 +257,7 @@ public class XuatKho extends javax.swing.JPanel {
                     .addComponent(etSoCCCD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etDiaChi1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -398,18 +276,18 @@ public class XuatKho extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1285, Short.MAX_VALUE)
+            .addGap(0, 1283, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1279, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1277, Short.MAX_VALUE)
                     .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 853, Short.MAX_VALUE)
+            .addGap(0, 842, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 847, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
                     .addContainerGap()))
         );
     }// </editor-fold>//GEN-END:initComponents

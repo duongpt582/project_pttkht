@@ -44,7 +44,6 @@ public class QuanLyHangHoa extends javax.swing.JPanel {
         jLabel_ten.setFont(new java.awt.Font("STIXVariants", 1, 36)); // NOI18N
         jLabel_ten.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_ten.setText("Quản Lý Hàng Hoá");
-        jLabel_ten.setBounds(new java.awt.Rectangle(0, 0, 0, 0));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mời bạn chọn chức năng", "Thêm mới hàng hoá", "Thay đổi thông tin hàng hoá", "Xoá hàng hoá" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -55,13 +54,11 @@ public class QuanLyHangHoa extends javax.swing.JPanel {
 
         jLabel_TenHang.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel_TenHang.setText("Tên hàng:");
-        jLabel_TenHang.setBounds(new java.awt.Rectangle(0, 0, 0, 0));
 
         jLabel_maHang.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel_maHang.setText("Mã hàng:");
 
         jTextField_tenHang.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jTextField_tenHang.setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         jTextField_tenHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_tenHangActionPerformed(evt);
@@ -106,7 +103,6 @@ public class QuanLyHangHoa extends javax.swing.JPanel {
         });
 
         btChinhSua.setText("Chỉnh sửa");
-        btChinhSua.setActionCommand("Chỉnh sửa");
         btChinhSua.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btChinhSua.setkEndColor(new java.awt.Color(255, 255, 51));
         btChinhSua.setPreferredSize(new java.awt.Dimension(130, 40));
@@ -118,20 +114,20 @@ public class QuanLyHangHoa extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Tài khoản", "Mât khẩu", "Tên nhân viên", "Ngày sinh", "Địa chỉ", "Số CCCD"
+                "Mã hàng hoá", "Tên hàng hoá", "Số lượng", "Nhà cung cấp"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -208,8 +204,6 @@ public class QuanLyHangHoa extends javax.swing.JPanel {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-
-        jLabel_ten.getAccessibleContext().setAccessibleName("Quản Lý Hàng Hoá");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
