@@ -3,11 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Project-Company-Management-master%202/Project-Company-Management-master/src/project/company/management/model/NhanVien.java</file>
-            <file>file:/D:/Project-Company-Management-master%202/Project-Company-Management-master/src/project/company/management/main/DangNhapFrame.java</file>
-            <file>file:/D:/Project-Company-Management-master%202/Project-Company-Management-master/src/project/company/management/main/Main.java</file>
-            <file>file:/D:/Project-Company-Management-master%202/Project-Company-Management-master/src/project/company/management/view/QuanLyNhanVien.java</file>
-            <file>file:/D:/Project-Company-Management-master%202/Project-Company-Management-master/src/project/company/management/view/QuanLyHeThong.java</file>
+            <file>file:/Users/quanghoang/Desktop/project_pttkht/src/project/company/management/view/NhapKho.java</file>
+            <file>file:/Users/quanghoang/Desktop/project_pttkht/src/project/company/management/view/Home.java</file>
+            <file>file:/Users/quanghoang/Desktop/project_pttkht/src/project/company/management/view/QuanLyHeThong.java</file>
+            <file>file:/Users/quanghoang/Desktop/project_pttkht/src/project/company/management/view/TimKiem.java</file>
+            <file>file:/Users/quanghoang/Desktop/project_pttkht/src/project/company/management/view/QuanLyHangHoa.java</file>
+            <file>file:/Users/quanghoang/Desktop/project_pttkht/src/project/company/management/view/QuanLyNhanVien.java</file>
+            <file>file:/Users/quanghoang/Desktop/project_pttkht/src/project/company/management/view/XuatKho.java</file>
+            <file>file:/Users/quanghoang/Desktop/project_pttkht/src/project/company/management/view/ThemCB.java</file>
+            <file>file:/Users/quanghoang/Desktop/project_pttkht/src/project/company/management/view/QuanLyNhaCungCap.java</file>
         </group>
     </open-files>
 </project-private>

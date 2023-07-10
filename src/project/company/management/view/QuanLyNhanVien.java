@@ -112,6 +112,7 @@ public class QuanLyNhanVien extends javax.swing.JPanel {
         etMatKhau = new javax.swing.JPasswordField();
 
         setBackground(new java.awt.Color(102, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1215, 819));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
