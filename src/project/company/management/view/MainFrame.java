@@ -17,6 +17,7 @@ import javax.swing.text.html.HTML;
 import project.company.management.model.DanhMucBean;
 import project.company.management.controller.ChuyenManHinhController;
 import project.company.management.model.NhanVien;
+import project.company.management.model.TaiKhoan;
 
 public class MainFrame extends javax.swing.JFrame {
 
@@ -65,24 +66,23 @@ public class MainFrame extends javax.swing.JFrame {
         danhSachNhanViens = new ArrayList<>();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date date = null;
+        Date dateHopDong = null;
         try {
             date = (Date) simpleDateFormat.parse("05-08-2002");
+            dateHopDong = (Date) simpleDateFormat.parse("05-06-2023");
         } catch (ParseException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        danhSachNhanViens.add(new NhanVien("duongpt", "123456" ,"Phạm Thái Dương", date, "Thường Tín, Hà Nội", "123455566"));
-        danhSachNhanViens.add(new NhanVien("nguyenhv", "789012", "Hoàng Văn Nguyên", date, "Cầu Giấy, Hà Nội", "789012345"));
-        danhSachNhanViens.add(new NhanVien("tranth", "345678", "Nguyễn Thanh Trân", date, "Hoàn Kiếm, Hà Nội", "345678901"));
-        danhSachNhanViens.add(new NhanVien("lemt", "901234", "Trần Mạnh Lễ", date, "Long Biên, Hà Nội", "901234567"));
-        danhSachNhanViens.add(new NhanVien("phamlh", "567890", "Lê Hồng Phát", date, "Đống Đa, Hà Nội", "567890123"));
-        danhSachNhanViens.add(new NhanVien("vuvt", "234567", "Trần Văn Vũ", date, "Ba Đình, Hà Nội", "234567890"));
-        danhSachNhanViens.add(new NhanVien("nguyenhx", "890123", "Hà Xuân Nguyên", date, "Tây Hồ, Hà Nội", "890123456"));
-        danhSachNhanViens.add(new NhanVien("dangt", "456789", "Trần Thị Đặng", date, "Hai Bà Trưng, Hà Nội", "456789012"));
-        danhSachNhanViens.add(new NhanVien("buihn", "012345", "Hoàng Nam Bửu", date, "Hà Đông, Hà Nội", "012345678"));
-        danhSachNhanViens.add(new NhanVien("lytd", "678901", "Đặng Thị Ly", date, "Gia Lâm, Hà Nội", "678901234"));
-
-        
-
+       
+        danhSachNhanViens.add(new NhanVien("6868", new TaiKhoan("duongpt", "12345"), "Phạm Thái Dương", date, "Nam", "0368562626", "Thường Tín, Hà Nội", dateHopDong));
+//        danhSachNhanViens.add(new NhanVien("6868", new TaiKhoan("duongpt", "12345"), "Phạm Thái Dương", date, "Nam", "0368562626", "Thường Tín, Hà Nội", dateHopDong));
+//        danhSachNhanViens.add(new NhanVien("1234", new TaiKhoan("nguyenvan", "67890"), "Nguyễn Văn A", date, "Nam", "0987654321", "Hà Đông, Hà Nội", dateHopDong));
+//        danhSachNhanViens.add(new NhanVien("5678", new TaiKhoan("lethi", "54321"), "Lê Thị B", date, "Nữ", "0123456789", "Cầu Giấy, Hà Nội", dateHopDong));
+//        danhSachNhanViens.add(new NhanVien("9101", new TaiKhoan("trantu", "13579"), "Trần Tú C", date, "Nam", "0765432109", "Hoàn Kiếm, Hà Nội", dateHopDong));
+//        danhSachNhanViens.add(new NhanVien("2345", new TaiKhoan("phamhong", "98765"), "Phạm Hồng D", date, "Nam", "0912345678", "Long Biên, Hà Nội", dateHopDong));
+//        danhSachNhanViens.add(new NhanVien("1234", new TaiKhoan("nguyenvan", "67890"), "Nguyễn Văn A", date, "Nam", "0987654321", "Hà Đông, Hà Nội", dateHopDong));
+//        danhSachNhanViens.add(new NhanVien("1234", new TaiKhoan("nguyenvan", "67890"), "Nguyễn Văn A", date, "Nam", "0987654321", "Hà Đông, Hà Nội", dateHopDong));
+    
     }
     
     @SuppressWarnings("unchecked")

@@ -8,28 +8,37 @@ import java.util.Date;
 
 public class NhanVien {
     private String maNV;
-    private String taiKhoan;
-    private String matKhau;
+    private TaiKhoan taiKhoan;
     private String ten;
     private Date tuoi;
+    private String gioiTinh;
+    private String soDienThoai;
     private String diaChi;
     private String soCCCD;
+    private Date ngayKyHopDong;
 
-    public NhanVien(String taiKhoan, String matKhau) {
-        this.taiKhoan = taiKhoan;
-        this.matKhau = matKhau;
-    }
+
 
     public NhanVien() {
     }
 
-    public NhanVien(String taiKhoan, String matKhau, String ten, Date tuoi, String diaChi, String soCCCD) {
+    public NhanVien(TaiKhoan taiKhoan, String ten, Date tuoi, String diaChi, String soCCCD) {
         this.taiKhoan = taiKhoan;
-        this.matKhau = matKhau;
         this.ten = ten;
         this.tuoi = tuoi;
         this.diaChi = diaChi;
         this.soCCCD = soCCCD;
+    }
+
+    public NhanVien(String maNV, TaiKhoan taiKhoan, String ten, Date tuoi, String gioiTinh, String soDienThoai, String diaChi, Date ngayKyHopDong) {
+        this.maNV = maNV;
+        this.taiKhoan = taiKhoan;
+        this.ten = ten;
+        this.tuoi = tuoi;
+        this.gioiTinh = gioiTinh;
+        this.soDienThoai = soDienThoai;
+        this.diaChi = diaChi;
+        this.ngayKyHopDong = ngayKyHopDong;
     }
     
     
@@ -40,6 +49,43 @@ public class NhanVien {
         this.diaChi = diaChi;
         this.soCCCD = soCCCD;
     }
+
+ 
+
+    public String getMaNV() {
+        return maNV;
+    }
+
+    public void setMaNV(String maNV) {
+        this.maNV = maNV;
+    }
+
+    public String getGioiTinh() {
+        return gioiTinh;
+    }
+
+    public void setGioiTinh(String gioiTinh) {
+        this.gioiTinh = gioiTinh;
+    }
+
+    public String getSoDienThoai() {
+        return soDienThoai;
+    }
+
+    public void setSoDienThoai(String soDienThoai) {
+        this.soDienThoai = soDienThoai;
+    }
+
+    public Date getNgayKyHopDong() {
+        return ngayKyHopDong;
+    }
+
+    public void setNgayKyHopDong(Date ngayKyHopDong) {
+        this.ngayKyHopDong = ngayKyHopDong;
+    }
+    
+    
+    
 
     public String getTen() {
         return ten;
@@ -73,21 +119,16 @@ public class NhanVien {
         this.soCCCD = soCCCD;
     }
 
-    public String getTaiKhoan() {
+    public TaiKhoan getTaiKhoan() {
         return taiKhoan;
     }
 
-    public void setTaiKhoan(String taiKhoan) {
+    public void setTaiKhoan(TaiKhoan taiKhoan) {
         this.taiKhoan = taiKhoan;
     }
 
-    public String getMatKhau() {
-        return matKhau;
-    }
-
-    public void setMatKhau(String matKhau) {
-        this.matKhau = matKhau;
-    }
+    
+    
     
     
     
