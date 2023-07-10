@@ -24,7 +24,7 @@ public class QuanLyNhaCungCap extends javax.swing.JPanel {
     public QuanLyNhaCungCap() {
         initComponents();
           
-        taoNhaCungCap();
+        danhSachNhaCungCaps = MainFrame.danhSachNhaCungCaps;
         
         model = (DefaultTableModel) jTable1.getModel();
 
@@ -48,20 +48,7 @@ public class QuanLyNhaCungCap extends javax.swing.JPanel {
         
         }
     }
-    private void taoNhaCungCap() {
-        danhSachNhaCungCaps = new ArrayList<>();
-        
-        danhSachNhaCungCaps.add(new NhaCungCap("112BK", "Đại học Bách Khoa Việt Nam"));
-        danhSachNhaCungCaps.add(new NhaCungCap("456TC", "Trường Đại học Công nghệ"));
-        danhSachNhaCungCaps.add(new NhaCungCap("789DN", "Đại học Ngoại thương"));
-        danhSachNhaCungCaps.add(new NhaCungCap("123SP", "Sản phẩm X"));
-        danhSachNhaCungCaps.add(new NhaCungCap("789VC", "Viện Công nghệ Vina"));
-        danhSachNhaCungCaps.add(new NhaCungCap("456DH", "Đại học Hanoi"));
-        danhSachNhaCungCaps.add(new NhaCungCap("112CD", "Công ty Điện tử ABC"));
-        danhSachNhaCungCaps.add(new NhaCungCap("123MT", "Máy tính XYZ"));
-        danhSachNhaCungCaps.add(new NhaCungCap("789HN", "Hãng Nước uống"));
-        danhSachNhaCungCaps.add(new NhaCungCap("456TB", "Trung tâm Bảo hành"));
-    }
+ 
    
 
     /** This method is called from within the constructor to

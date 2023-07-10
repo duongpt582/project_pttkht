@@ -22,6 +22,7 @@ import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 import project.company.management.model.NhanVien;
+import project.company.management.model.TaiKhoan;
 
 public class QuanLyHeThong extends javax.swing.JPanel {
     UtilDateModel model1 = new UtilDateModel();
@@ -54,17 +55,9 @@ public class QuanLyHeThong extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         jComboBox1 = new javax.swing.JComboBox<>();
         titleLabel = new javax.swing.JLabel();
-        etDiaChi = new javax.swing.JTextField();
-        etTen = new javax.swing.JTextField();
-        etCCCD = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         btXoa = new com.k33ptoo.components.KButton();
         btThem = new com.k33ptoo.components.KButton();
-        jDateChooser = new com.toedter.calendar.JDateChooser();
-        jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         etTaiKhoan = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -86,6 +79,11 @@ public class QuanLyHeThong extends javax.swing.JPanel {
 
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mời chọn chức năng", "Thêm nhân viên", "Xóa nhân viên" }));
@@ -98,26 +96,6 @@ public class QuanLyHeThong extends javax.swing.JPanel {
         titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleLabel.setText("Quản Lý Hệ Thống");
-
-        etDiaChi.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        etDiaChi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                etDiaChiActionPerformed(evt);
-            }
-        });
-
-        etTen.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        etCCCD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setText("Tên nhân viên");
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("Địa chỉ");
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setText("Ngày sinh");
 
         jLabel9.setText(".");
 
@@ -136,9 +114,6 @@ public class QuanLyHeThong extends javax.swing.JPanel {
                 btThemActionPerformed(evt);
             }
         });
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("Căn cước công dân:");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setText("Tài khoản");
@@ -167,58 +142,33 @@ public class QuanLyHeThong extends javax.swing.JPanel {
                 .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(kGradientPanel2Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 811, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(151, 151, 151)
                         .addComponent(jLabel9))
                     .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                        .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                                .addGap(468, 468, 468)
-                                .addComponent(btThem, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(109, 109, 109)
-                                .addComponent(btXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(jLabel2)
+                        .addGap(0, 1183, Short.MAX_VALUE)))
                 .addGap(6, 6, 6))
             .addGroup(kGradientPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(kGradientPanel2Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18))
-                            .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(kGradientPanel2Layout.createSequentialGroup()
                         .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(etTen, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-                                .addComponent(etDiaChi))
-                            .addComponent(etTaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                            .addComponent(etTaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(etMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(126, 126, 126)
                         .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel8))
-                        .addGap(18, 18, 18)
-                        .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jDateChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(etCCCD)
-                            .addComponent(etMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(125, 125, 125))
-                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                        .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 811, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(btXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btThem, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         kGradientPanel2Layout.setVerticalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,39 +180,25 @@ public class QuanLyHeThong extends javax.swing.JPanel {
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
+                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
                         .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(etTaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addGap(11, 11, 11)
-                        .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(etTen, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(etDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
-                        .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(etMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(kGradientPanel2Layout.createSequentialGroup()
+                                .addGap(256, 256, 256)
+                                .addComponent(jLabel9))
+                            .addGroup(kGradientPanel2Layout.createSequentialGroup()
+                                .addGap(122, 122, 122)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(kGradientPanel2Layout.createSequentialGroup()
+                        .addComponent(btThem, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(etCCCD, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))))
-                .addGap(49, 49, 49)
-                .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btThem, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76)
-                .addComponent(jLabel9)
-                .addGap(19, 19, 19)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76))
+                            .addComponent(btXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(etMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(245, 245, 245))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -292,10 +228,6 @@ public class QuanLyHeThong extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void etDiaChiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etDiaChiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_etDiaChiActionPerformed
-
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
         int x = jComboBox1.getSelectedIndex();
@@ -320,40 +252,37 @@ public class QuanLyHeThong extends javax.swing.JPanel {
 
     private void btThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btThemActionPerformed
         // TODO add your handling code here:
-//        String taiKhoan = etTaiKhoan.getText();
-//        String matKhau = String.valueOf(etMatKhau.getPassword());
-//        String ten = etTen.getText();
-//        String soCCCD = etCCCD.getText();
-//        String diaChi = etDiaChi.getText();
-//        Date ngaySinh = (Date) jDateChooser.getDate();
-//        
-//        if (!taiKhoan.isEmpty() && !matKhau.isEmpty() && !ten.isEmpty() && !soCCCD.isEmpty() && !diaChi.isEmpty() && ngaySinh != null) {
-////            NhanVien nhanVien = new NhanVien(taiKhoan, matKhau, ten, ngaySinh, diaChi, soCCCD);
-//            danhSachNhanViens.add(nhanVien);
-//            model.addRow(new Object[]{
-//                        nhanVien.getTaiKhoan().getTenTK(), nhanVien.getTen(), nhanVien.getTuoi(), nhanVien.getDiaChi(), nhanVien.getGioiTinh()
-//            });
-//            JOptionPane.showMessageDialog(this, "Success");
-//        } else {
-//            JOptionPane.showMessageDialog(this, "Failed");
-//        }
+        String taiKhoan = etTaiKhoan.getText();
+        String matKhau = String.valueOf(etMatKhau.getPassword());
+      
+        
+        if (!taiKhoan.isEmpty() && !matKhau.isEmpty()) {
+            TaiKhoan nick = new TaiKhoan(taiKhoan, matKhau);
+            model.addRow(new Object[]{
+                        nick.getTenTK(), nick.getMatKhauTK(), "User"
+            });
+            JOptionPane.showMessageDialog(this, "Success");
+        } else {
+            JOptionPane.showMessageDialog(this, "Failed");
+        }
         
         
     }//GEN-LAST:event_btThemActionPerformed
 
     private void btXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btXoaActionPerformed
         // TODO add your handling code here:
-        System.out.println("Date: " + jDateChooser.getDate());
-        
-        if (etCCCD.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Vui lòng nhập mã CCCD để xoá.");
-        } else {
-            String soCCCD = etCCCD.getText().trim();
-            for (NhanVien nhanVien : danhSachNhanViens) {
-                if (nhanVien.getSoCCCD().equalsIgnoreCase(soCCCD)) {
-                    danhSachNhanViens.remove(nhanVien);
-                }
-            }
+       model = (DefaultTableModel) jTable1.getModel();
+        if(jTable1.getSelectedRowCount() == 0){
+            JOptionPane.showMessageDialog(null, "Hãy chọn một tài khoản!");
+        }
+        else if(jTable1.getSelectedRowCount() > 1){
+            JOptionPane.showMessageDialog(null, "Chỉ được chọn một tài khoản!");
+        }
+        else {
+            model.removeRow(jTable1.getSelectedRow());
+            JOptionPane.showMessageDialog(null, "Xóa thành công!" );
+
+           
         }
 
     }//GEN-LAST:event_btXoaActionPerformed
@@ -366,16 +295,26 @@ public class QuanLyHeThong extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_etMatKhauActionPerformed
 
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        if(jTable1.getSelectedRowCount() == 1){
+       
+                etTaiKhoan.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString());
+                etMatKhau.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 1).toString());
+              
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
+
     public void showTable(){
         model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
         model.setColumnIdentifiers(new Object[]{
-            "Tài khoản","Tên", "Ngày sinh", "Địa chỉ", "Số CCCD"
+            "Tài khoản", "Mật khẩu", "Quyền hạn"
         });
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
         for (NhanVien nhanVien : danhSachNhanViens) {
              model.addRow(new Object[]{
-                        nhanVien.getTaiKhoan(), nhanVien.getTen(), simpleDateFormat.format(nhanVien.getTuoi()), nhanVien.getDiaChi(), nhanVien.getSoCCCD()
+                        nhanVien.getTaiKhoan().getTenTK(), nhanVien.getTaiKhoan().getMatKhauTK(), "user"
             });
         
         }
@@ -411,20 +350,12 @@ public class QuanLyHeThong extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.k33ptoo.components.KButton btThem;
     private com.k33ptoo.components.KButton btXoa;
-    private javax.swing.JTextField etCCCD;
-    private javax.swing.JTextField etDiaChi;
     private javax.swing.JPasswordField etMatKhau;
     private javax.swing.JTextField etTaiKhoan;
-    private javax.swing.JTextField etTen;
     private javax.swing.JComboBox<String> jComboBox1;
-    private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

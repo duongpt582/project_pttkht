@@ -15,16 +15,14 @@ public class XuatKho {
     private String maHang;
     private long soLuong;
     private float thanhTien;
-    private String maNhaCungCap;
     private Date ngayXuat;
     private String maNhanVien;
 
-    public XuatKho(long maPhieuXuat, String maHang, long soLuong, float thanhTien, String maNhaCungCap, Date ngayXuat, String maNhanVien) {
+    public XuatKho(long maPhieuXuat, String maHang, long soLuong, float thanhTien, Date ngayXuat, String maNhanVien) {
         this.maPhieuXuat = maPhieuXuat;
         this.maHang = maHang;
         this.soLuong = soLuong;
         this.thanhTien = thanhTien;
-        this.maNhaCungCap = maNhaCungCap;
         this.ngayXuat = ngayXuat;
         this.maNhanVien = maNhanVien;
     }
@@ -61,14 +59,6 @@ public class XuatKho {
 
     public void setThanhTien(float thanhTien) {
         this.thanhTien = thanhTien;
-    }
-
-    public String getMaNhaCungCap() {
-        return maNhaCungCap;
-    }
-
-    public void setMaNhaCungCap(String maNhaCungCap) {
-        this.maNhaCungCap = maNhaCungCap;
     }
 
     public Date getNgayXuat() {

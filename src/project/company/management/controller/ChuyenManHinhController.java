@@ -13,16 +13,18 @@ import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import project.company.management.model.DanhMucBean;
-import project.company.management.view.XuatKho;
+import project.company.management.view.QuanLyXuatKho;
 
 import project.company.management.view.Home;
+import project.company.management.view.KiemKe;
 import project.company.management.view.QuanLyHeThong;
 import project.company.management.view.ThemCB;
 
-import project.company.management.view.NhapKho;
+import project.company.management.view.QuanLyNhapKho;
 import project.company.management.view.QuanLyHangHoa;
 import project.company.management.view.QuanLyNhaCungCap;
 import project.company.management.view.QuanLyNhanVien;
+import project.company.management.view.TimKiem;
 
 /**
  *
@@ -108,12 +110,20 @@ public class ChuyenManHinhController {
                        
 
                     case "NhapKho":
-                        node = new NhapKho();
+                        node = new QuanLyNhapKho();
                         break;
 
                     case "XuatKho":
-                        node = new XuatKho();
+                        node = new QuanLyXuatKho();
                         break;
+                    case "TimKiem":
+                        node = new TimKiem();
+                        break;
+                        
+                    case "KiemKe":
+                        node = new KiemKe();
+                        break;
+                        
                     default:
                         break;
                }
