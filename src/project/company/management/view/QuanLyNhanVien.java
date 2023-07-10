@@ -125,6 +125,7 @@ public class QuanLyNhanVien extends javax.swing.JPanel {
         jDateKyHD = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(102, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1215, 819));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -423,10 +424,10 @@ public class QuanLyNhanVien extends javax.swing.JPanel {
             model.removeRow(jTable1.getSelectedRow());
             try {
                 
-                String soCCCD = etGioiTinh.getText();
+                String soCCCD = etMaNV.getText();
                 if (!soCCCD.isEmpty()) {
                     for (int i = 0; i < danhSachNhanVien.size(); i++) {
-                        if (danhSachNhanVien.get(i).getSoCCCD().equals(soCCCD)) {
+                        if (danhSachNhanVien.get(i).getMaNV().equals(soCCCD)) {
                             danhSachNhanVien.remove(i);
                             JOptionPane.showMessageDialog(null, "Xóa thành công!" );
 
@@ -468,17 +469,24 @@ public class QuanLyNhanVien extends javax.swing.JPanel {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
         if(jTable1.getSelectedRowCount() == 1){
-            etMaNV.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString());
-            etTaiKhoan.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 1).toString());
-            etMatKhau.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 2).toString());
-            etTenNhanVien
             try {
-                jDatePicker.setDate(convertStringToDate(jTable1.getValueAt(jTable1.getSelectedRow(), 3).toString()));
+                etMaNV.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString());
+                etTaiKhoan.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 1).toString());
+                etMatKhau.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 2).toString());
+                etTenNhanVien.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 3).toString());
+                Date date = simpleDateFormat.parse(jTable1.getValueAt(jTable1.getSelectedRow(), 4).toString());
+                jDatePicker.setDate(date);
+                etDiaChi.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 5).toString());
+                etGioiTinh.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 6).toString());
+                etSDT.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 7).toString());
+                
+                Date date2 = simpleDateFormat.parse(jTable1.getValueAt(jTable1.getSelectedRow(), 8).toString());
+                jDateKyHD.setDate(date2);
             } catch (ParseException ex) {
                 Logger.getLogger(QuanLyNhanVien.class.getName()).log(Level.SEVERE, null, ex);
             }
-            etDiaChi.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 4).toString());
-            etGioiTinh.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 5).toString());
+
+
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
